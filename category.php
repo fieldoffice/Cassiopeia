@@ -2,8 +2,10 @@
 
 <section class="section">
 
+    <?php if ( have_posts() ) : ?>
+
     <header>
-        <h1><?php _e( 'Categories for ', 'cassiopeia' ); single_cat_title(); ?></h1>
+        <h1><?php _e( 'Category archives: ', 'cassiopeia' ); single_cat_title(); ?></h1>
     </header>
 
     <?php
@@ -11,6 +13,8 @@
             get_template_part( 'includes/loop-excerpt' );
         endwhile;
             get_template_part('includes/pagination');
+        else :
+            get_template_part( 'includes/loop-empty' );
         endif;
     ?>
 

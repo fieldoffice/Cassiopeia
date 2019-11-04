@@ -2,6 +2,8 @@
 
 <section div class="section">
 
+    <?php if ( have_posts() ) : ?>
+
     <header>
         <h1><?php _e( 'Latest Posts', 'cassiopeia' ); ?></h1>
     </header>

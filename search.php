@@ -5,7 +5,7 @@
     <?php if ( have_posts() ) : ?>
 
     <header>
-        <h1><?php _e( 'No results were found for', 'cassiopeia' ); ?> '<?php echo get_search_query(); ?>'</h1>
+        <h1><?php _e( 'Search results for:', 'cassiopeia' ); ?> '<?php echo get_search_query(); ?>'</h1>
     </header>
 
     <?php
@@ -17,8 +17,6 @@
             get_template_part( 'includes/loop-empty' );
         endif;
     ?>
-
-    <?php get_template_part( 'includes/search' ); ?>
 
 </section><!-- /.section -->
 
