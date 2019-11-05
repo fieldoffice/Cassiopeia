@@ -56,6 +56,29 @@ register_nav_menus( array(
     'sidebar-menu' => __( 'Sidebar Menu', 'cassiopeia' )
 ));
 
+// Primary navigation
+function cassiopeia_nav() {
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'primary-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+    ));
+}
+
 // Thumbnails
 
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
