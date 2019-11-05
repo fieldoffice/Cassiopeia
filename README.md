@@ -16,4 +16,4 @@ HTML5 WordPress starter theme
 
 
 ### Plugins
-* Includes Headspace. Removes unwanted links output from wp-head
+* Headspace. Removes unwanted links output from wp-head

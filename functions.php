@@ -9,6 +9,8 @@
     * hooks in WordPress to change core functionality.
 */
 
+// add_theme_support( 'title-tag' ); // Let WordPress manage the page title
+
 // Remove actions
 
 remove_action( 'wp_head', 'wlwmanifest_link' ); //  Remove link to Windows Live Writer manifest file <link rel="wlwmanifest" type="application/wlwmanifest+xml">
@@ -57,10 +59,10 @@ register_nav_menus( array(
 // Thumbnails
 
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-add_image_size('large', 700, '', true); // Large Thumbnail
-add_image_size('medium', 250, '', true); // Medium Thumbnail
-add_image_size('small', 120, '', true); // Small Thumbnail
-add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+add_image_size( 'large', 700, '', true ); // Large Thumbnail
+add_image_size( 'medium', 250, '', true ); // Medium Thumbnail
+add_image_size( 'small', 120, '', true ); // Small Thumbnail
+add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
@@ -81,6 +83,12 @@ if (function_exists( 'cassiopeia_sidebar' )) {
         'after_title'  =>  '</h3>'
     ));
 }
+
+// Output valid HTML5
+
+add_theme_support( 'html5', array(
+    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+));
 
 // Remove Gutenberg block CSS
 
