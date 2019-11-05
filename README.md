@@ -10,6 +10,10 @@ HTML5 WordPress starter theme
 * Uses BEM syntax for class names
 
 ### CSS
+* SASS Ready
 
 ### Preloaded Functions
-* Remove p tags from excerpts
+
+
+### Plugins
+* Includes Headspace. Removes unwanted links output from wp-head
