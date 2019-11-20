@@ -2,7 +2,7 @@
 /*
     Plugin Name: Headspace
     Plugin URI: https://fieldoffice.co.uk
-    Description: Remove unwanted links output from wp-head
+    Description: Remove unwanted links from wp-head
     Version: 1.1.0
     Author: Andy Field
     Author URI: https://fieldoffice.co.uk
