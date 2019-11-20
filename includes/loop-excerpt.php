@@ -9,7 +9,14 @@
     <?php endif; ?>
 
     <header>
+
+        <?php if ( is_archive() ) { ?>
+        <h1><?php _e( 'Archives', 'cassiopeia' ); ?></h1>
+        <?php } elseif ( is_category() ) { ?>
+        <h1><?php _e( 'Category archives: ', 'cassiopeia' ); single_cat_title(); ?></h1>
+        <?php } else { ?>
         <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+        <?php endif; ?>
 
         <div class="meta">
             <span class="meta__date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>

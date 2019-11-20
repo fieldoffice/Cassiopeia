@@ -8,14 +8,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
-get_header(); 
-
+get_header();
 ?>
 
-<section div class="section">
-
-    <?php if ( have_posts() ) : ?>
+<section class="section">
 
     <header>
         <h1><?php _e( 'Latest Posts', 'cassiopeia' ); ?></h1>

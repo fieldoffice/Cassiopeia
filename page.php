@@ -8,16 +8,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
-get_header(); 
-
+get_header();
 ?>
 
 <section class="section">
-
-    <header>
-        <h1><?php the_title(); ?></h1>
-    </header>
 
     <?php
         while ( have_posts() ) : the_post();
