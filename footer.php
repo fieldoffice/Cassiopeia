@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying the site footer.
+ *
+ * @package cassiopeia
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+?>
         </main>
         <!-- CONTENT END -->
 

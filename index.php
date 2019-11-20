@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The site's entry point.
+ *
+ * @package cassiopeia
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+get_header(); 
+
+?>
 
 <section div class="section">
 
@@ -21,6 +34,5 @@
 </section><!-- /.section -->
 
 <?php 
-    get_sidebar();
     get_footer(); 
 ?>

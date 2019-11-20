@@ -9,39 +9,11 @@
     * hooks in WordPress to change core functionality.
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 // add_theme_support( 'title-tag' ); // Let WordPress manage the page title
-
-// Remove actions
-
-remove_action( 'wp_head', 'wlwmanifest_link' ); //  Remove link to Windows Live Writer manifest file <link rel="wlwmanifest" type="application/wlwmanifest+xml">
-remove_action( 'wp_head', 'wp_generator' ); // Remove <meta name="generator" content="WordPress {version}">
-remove_action( 'wp_head', 'rsd_link' ); // Remove the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action( 'wp_head', 'wp_shortlink_wp_head' ); // Remove the shortlink
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10 ); // Remove api.w.org relation links
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 ); // Remove api.w.org relation links
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 ); // Remove api.w.org relation links
-remove_action( 'wp_head', 'feed_links', 2 ); // Remove the links to the general feeds: Post and Comment Feed
-remove_action( 'wp_head', 'feed_links_extra', 3 ); // Remove the links to the extra feeds such as category feeds
-remove_action( 'wp_head', 'index_rel_link' ); // Remove the index post relational link
-remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // Remove the previous post relational link
-remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // Remove the start post relational link
-remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Remove the adjacent post relational links
-// remove_action('wp_head', 'rel_canonical'); // Remove the canonical link
-
-// Disable emojis
-
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-// Disable smilies
-
-register_activation_hook( __FILE__, function(){ update_option( 'use_smilies', false ); } );
-register_deactivation_hook( __FILE__, function(){ update_option( 'use_smilies', true ); } );
-
-// Sidebars
-
-add_filter( 'widget_text', 'do_shortcode' ); // Allow shortcodes in the sidebar
-add_filter( 'widget_text', 'shortcode_unautop' ); // Remove <p> tags from sidebars
 
 // Disable auto insertion of <p> tags
 
@@ -52,11 +24,11 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 register_nav_menus( array(
     'primary-menu' => __( 'Primary Menu', 'cassiopeia' ),
-    'footer-menu' => __( 'Footer Menu', 'cassiopeia' ),
-    'sidebar-menu' => __( 'Sidebar Menu', 'cassiopeia' )
+    'footer-menu' => __( 'Footer Menu', 'cassiopeia' )
 ));
 
 // Primary navigation
+
 function cassiopeia_nav() {
     wp_nav_menu(
     array(
@@ -91,20 +63,6 @@ add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
-}
-
-// Sidebars
-
-if (function_exists( 'cassiopeia_sidebar' )) {
-    register_sidebar(array(
-        'name' => __('Sidebar Widget 1', 'cassiopeia'),
-        'description' => __('Description for this widget', 'cassiopeia'),
-        'id' => 'sidebar',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3>',
-        'after_title'  =>  '</h3>'
-    ));
 }
 
 // Output valid HTML5

@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages.
+ *
+ * @package cassiopeia
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+get_header(); 
+
+?>
 
 <section class="section">
 
@@ -17,6 +30,5 @@
 </section><!-- /.section -->
 
 <?php
-    get_sidebar();
     get_footer(); 
 ?>

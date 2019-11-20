@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for displaying the site header.
+ *
+ * @package cassiopeia
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
