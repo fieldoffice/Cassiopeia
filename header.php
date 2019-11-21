@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <meta name="description" content="<?php bloginfo('description'); ?>">
 
         <link rel="author" type="text/plain" href="/humans.txt">
-        <!-- link rel="manifest" href="/manifest.json" -->
+        <link rel="manifest" href="/manifest.json">
 
         <!-- FAVICONS -->
         <link href="<?php echo get_template_directory_uri(); ?>/assets/icons/favicon.ico" rel="shortcut icon">
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
          <!-- CSS -->
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.min.css" media="screen">
-
+        
         <?php wp_head(); ?>
 
     </head>

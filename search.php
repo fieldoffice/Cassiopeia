@@ -8,7 +8,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+
 get_header(); 
+
 ?>
     
 <section class="section">

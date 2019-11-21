@@ -12,6 +12,14 @@
         <h1><?php the_title(); ?></h1>
     </header>
 
+    <?php
+        if ( ! has_excerpt() ) {
+        echo '';
+        } else { 
+        the_excerpt();
+        }
+    ?>
+
     <?php the_content(); ?>
     
 </article>

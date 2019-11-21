@@ -11,23 +11,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<section class="section">
-
-    <header>
-        <h1><?php _e( 'Latest Posts', 'cassiopeia' ); ?></h1>
-    </header>
-
-    <?php
-        while ( have_posts() ) : the_post();
-            get_template_part( 'includes/loop-excerpt' );
-        endwhile;
-            get_template_part('includes/pagination');
-        else :
-            get_template_part( 'includes/loop-empty' );
-        endif;
+    <?php if ( is_singular() ) {
+        get_template_part( 'templates/single' );
+        echo '<pre>SINGLE</pre>';
+        } elseif ( is_archive() || is_category() || is_home() ) {
+        get_template_part( 'templates/archive' );
+        echo '<pre>ARCHIVE</pre>';
+        } elseif ( is_search() ) {
+        get_template_part( 'templates/search' );
+        echo '<pre>SEARCH</pre>';
+        } else {
+        get_template_part( 'templates/404' );
+        echo '<pre>404</pre>';
+        }
     ?>
-
-</section><!-- /.section -->
 
 <?php 
     get_footer(); 
