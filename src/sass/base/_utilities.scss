@@ -1,0 +1,11 @@
+.is-hidden { /* Hide for screenreaders and browser */
+    display: none;
+}
+
+.is-invisible {  /* Hide for screenreaders and browsers but maintain layout */
+    visibility: hidden;
+}
+
+.is-shown {
+    display: block;
+}
